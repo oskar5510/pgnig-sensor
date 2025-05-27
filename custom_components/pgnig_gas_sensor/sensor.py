@@ -4,7 +4,7 @@ from __future__ import annotations
 import logging
 import string
 from datetime import timedelta
-from typing import Callable, Optional
+from typing import Callable, Optional, Any
 
 import homeassistant.helpers.config_validation as cv
 import voluptuous as vol
@@ -12,7 +12,9 @@ from homeassistant.components.sensor import SensorEntity, PLATFORM_SCHEMA, Senso
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import CONF_USERNAME, CONF_PASSWORD, UnitOfVolume
 from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+
+ConfigType = dict[str, Any]
+DiscoveryInfoType = dict[str, Any]
 
 
 from .Invoices import InvoicesList
